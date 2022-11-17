@@ -5,8 +5,17 @@ import ReactDOM from "react-dom";
 // include your styles into the webpack bundle
 import "../styles/index.css";
 
-//import your own components
-import Home from "./component/home.jsx";
 
-//render your react application
-ReactDOM.render(<Home />, document.querySelector("#app"));
+import Counter from "./component/counter.jsx";
+
+
+let tiempo =  0;
+
+setInterval(()=>{
+    console.log(tiempo);
+    //render your react application
+    ReactDOM.render(<Counter segundos={tiempo}/>, document.querySelector("#app"));
+    tiempo++
+},100)
+
+
